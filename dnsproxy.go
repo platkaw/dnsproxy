@@ -223,10 +223,7 @@ func proxyServe(w dns.ResponseWriter, req *dns.Msg) {
 				log.Printf("id: %5d resolve: %v %s %s\n", id, query, dns, proto)
 			}
 		}
-		client := clientUDP
-		if proto == "tcp" {
-			client = clientTCP
-		}
+		client := clientTCP
 		m, _, err = client.Exchange(req, dns)
 		if err == nil && len(m.Answer) > 0 {
 			used = dns

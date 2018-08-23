@@ -20,8 +20,8 @@ import (
 )
 
 var (
-	dnss    = flag.String("dns", "192.168.2.1:53:udp,8.8.8.8:53:udp,8.8.4.4:53:udp,8.8.8.8:53:tcp,8.8.4.4:53:tcp", "dns address, use `,` as sep")
-	local   = flag.String("local", ":53", "local listen address")
+	dnss    = flag.String("dns", "1.1.1.1:53:tcp,1.0.0.1:53:tcp,8.8.8.8:53:tcp,8.8.4.4:53:tcp", "dns address, use `,` as sep")
+	local   = flag.String("local", ":5553", "local listen address")
 	debug   = flag.Int("debug", 0, "debug level 0 1 2")
 	encache = flag.Bool("cache", true, "enable go-cache")
 	expire  = flag.Int64("expire", 3600, "default cache expire seconds, -1 means use doamin ttl time")

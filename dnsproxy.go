@@ -26,7 +26,7 @@ var (
 	encache = flag.Bool("cache", true, "enable go-cache")
 	expire  = flag.Int64("expire", -1, "default cache expire seconds, -1 means use doamin ttl time")
 	file    = flag.String("file", filepath.Join(path.Dir(os.Args[0]), "cache.dat"), "cached file")
-	ipv6    = flag.Bool("6", false, "skip ipv6 record query AAAA")
+	ipv6    = flag.Bool("6", true, "skip ipv6 record query AAAA")
 	timeout = flag.Int("timeout", 200, "read/write timeout")
 
 	clientTCP *dns.Client
